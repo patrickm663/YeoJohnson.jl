@@ -24,7 +24,7 @@ It accepts the following parameters:
 - `min`: the minimum value in the search range for lambda (DEFAULT = -2)
 - `max`: the maximum value in the search range for lambda (DEFAULT = 2)
 - `\lambda`: a user-defined lambda value if the optimiser is not being used
-- 'opt`: a boolean value for whether to oprtimise for lambda or use the user-defined value
+- `opt`: a boolean value for whether to oprtimise for lambda or use the user-defined value
 
 ## Example
 
@@ -37,9 +37,9 @@ x = rand(d, 10_000)
 
 y = yeojohnson(x)
 ```
-!(Untransformed Gamma)["/images/untransformed_gamma.png"]
+![Untransformed Gamma](/images/untransformed_gamma.png)
 
-!(Transformed Gamma)["/images/transformed_gamma.png"]
+![Transformed Gamma](/images/transformed_gamma.png)
 
 ## Source
 The original source of the algorithm is Yeo, In-Kwon and Johnson, Richard A. (2000). "A New Family of Power Transformations to Improve Normality or Symmetry". Biometrika. 87 (4): 954–959. doi:10.1093/biomet/87.4.954
