@@ -1,7 +1,7 @@
 name = "YeoJohnson"
 uuid = "4236c574-1900-44e3-aa41-0fcb6fed4f9a"
 authors = ["Patrick Moehrke"]
-version = "0.1.0"
+version = "0.2.0"
 
 [deps]
 Optim = "429524aa-4258-5aef-a3af-852621145aeb"
