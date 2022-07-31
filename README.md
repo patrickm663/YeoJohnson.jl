@@ -10,7 +10,7 @@ The Yeo-Johnson power transformation is an extension of the Box-Cox transformati
 The value $\lambda$ is estimated by minimising the negative likelihood function. The search interval is -2, 2 (by default).
 
 ## Installation
-The project can be installed from the Julia REPL as follows once Package mode is active (pressing `]` in the REPL:
+The project can be installed from the Julia REPL as follows once Package mode is active (pressing `]` in the REPL):
 ```julia
 add "https://github.com/patrickm663/YeoJohnson.jl"
 ```
