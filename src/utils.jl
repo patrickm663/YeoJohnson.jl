@@ -1,49 +1,51 @@
 using Statistics
 using Optim
 
-function YJ(y::Vector, λ)::Vector
+function YJ(y3::Vector, λ3)::Vector
 ## Purpose: Performs the Yeo-Johnson power transformation
 ## Input: a vector and λ
 ## Output: a vector
-    for i in 1:length(y)
-        if y[i] ≥ 0
-            if λ ≠ 0
-                y[i] = ((y[i] + 1)^λ - 1)/λ
+    size = length(y3)
+    yTransformed = zeros(size)
+    for i in 1:size
+        if y3[i] ≥ 0
+            if λ3 ≠ 0
+                yTransformed[i] = ((y3[i] + 1)^λ3 - 1)/λ3
             else
-                y[i] = log(y[i] + 1)
+                yTransformed[i] = log(y3[i] + 1)
             end
         else
-            if λ ≠ 2
-                y[i] = -((-y[i] + 1)^(2 - λ) - 1)/(2 - λ)
+            if λ3 ≠ 2
+                yTransformed[i] = -((-y3[i] + 1)^(2 - λ3) - 1)/(2 - λ3)
             else
-                y[i] = -log(-y[i] + 1)
+                yTransformed[i] = -log(-y3[i] + 1)
             end
         end
     end
-    return y
+    return yTransformed
 end
 
-function yeojohnson(y::Vector; min = -2, max = 2, λ = 0.1, opt = true)::Vector
+function yeojohnson(y2::Vector; min = -2, max = 2, λ2 = 0.1, opt = true)::Vector
 ## Purpose: Calls the YJ function depending on whether lambda should be optimised or not
 ## Input: A Vector. Optional inputs are the min and max search range for the optimiser, an optional λ parameter, and a flag for whether to optimise or use the λ input provided
 ## Output: a Vector of Yeo-Johnson transformed values
     if opt == true
-        λ = λoptimum(y, min, max)
-        return YJ(y, λ) 
+        λ2 = λoptimum(y2, min, max)
+        return YJ(y2, λ2) 
     else
-        return YJ(y, λ)
+        return YJ(y2, λ2)
     end
 end
 
-function LogLike(y, λ)::Float32
+function LogLike(y1, λ1)::Float32
 ## Purpose: Computes the log-likelihood of the Yeo-Johnson power transformation
 ## Input: a Vector and λ parameter
 ## Output: a Float
 ## Source: Algorithm from SciPy.stats `yeojohnson_lif` function in _morestats.py
-    N = length(y)
-    σ̂² = var(YJ(y, λ))
-    LL = -N/2 * log(σ̂²) + (λ - 1) * sum(sgn.(y) .* log.(abs.(y) .+ 1))
-    return LL
+    N = length(y1)
+    σ̂² = var(YJ(y1, λ1))
+    LL = -N/2 * log(σ̂²) + (λ1 - 1) * sum(sgn.(y1) .* log.(abs.(y1) .+ 1))
+    return -LL
 end
 
 function sgn(x)
