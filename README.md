@@ -45,4 +45,4 @@ y = yeojohnson(x)
 The original source of the algorithm is Yeo, In-Kwon and Johnson, Richard A. (2000). "A New Family of Power Transformations to Improve Normality or Symmetry". Biometrika. 87 (4): 954–959. doi:10.1093/biomet/87.4.954
 
 ## License
-This project is licesnes under the MIT License.
+This project is licensed under the MIT License.
