@@ -7,7 +7,7 @@ This package serves as a lightweight implementation of the [Yeo-Johnson](https:/
 ## Algorithm
 The Yeo-Johnson power transformation is an extension of the Box-Cox transformation that allows inputs that are not strictly positive. The intention behind applying a power transformation is to improve normality.
 
-The formula for the transformation is as follows for each $\y_{i}$ $\in$ $\mathb{y}$:
+The formula for the transformation is as follows for each $y_{i}$ $\in$ $\mathbr{y}$:
 
 $$\begin{equation}
 \psi{(\lambda,y_{i})} =
