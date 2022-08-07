@@ -7,15 +7,15 @@ This package serves as a lightweight implementation of the [Yeo-Johnson](https:/
 ## Algorithm
 The Yeo-Johnson power transformation is an extension of the Box-Cox transformation that allows inputs that are not strictly positive. The intention behind applying a power transformation is to improve normality.
 
-The formula for the transformation is as follows for each $y_{i}$ $\in$ $\mathbr{y}$:
+The formula for the transformation is as follows for each $y_{i}$ $\in$ $y$:
 
 $$\begin{equation}
 \psi{(\lambda,y_{i})} =
     \begin{cases}
-      ((y_{i}+1)^{\lambda}-1)/\lambda, & \text{if }\ \lambda \ne 0, y \ge 0 \\
-      \log{(y_{i}+1)}, & \text{if } \lambda = 0, y \ge 0 \\
-      -[(-y_{i}+1)^{2-\lambda}-1]/(2-\lambda), & \text{if }\ \lambda \ne 2, y < 0 \\
-      -\log{(-y_{i}+1)}, & \text{if } \lambda = 2, y < 0 \\
+      ((y_{i}+1)^{\lambda}-1)/\lambda, & \text{if }\ \lambda \ne 0, y_i \ge 0 \\
+      \log{(y_{i}+1)}, & \text{if } \lambda = 0, y_i \ge 0 \\
+      -[(-y_{i}+1)^{2-\lambda}-1]/(2-\lambda), & \text{if }\ \lambda \ne 2, y_i < 0 \\
+      -\log{(-y_{i}+1)}, & \text{if } \lambda = 2, y_i < 0 \\
     \end{cases}
     \end{equation}$$
 
