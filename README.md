@@ -12,9 +12,9 @@ The formula for the transformation is as follows for each $y_{i}$ $\in$ $y$:
 $$\begin{equation}
 \psi{(\lambda,y_{i})} =
     \begin{cases}
-      ((y_{i}+1)^{\lambda}-1)/\lambda, & \text{if }\ \lambda \ne 0, y_i \ge 0 \\
+      ((y_{i}+1)^{\lambda}-1)/\lambda, & \text{if}\ \lambda \ne 0, y_i \ge 0 \\
       \log{(y_{i}+1)}, & \text{if } \lambda = 0, y_i \ge 0 \\
-      -[(-y_{i}+1)^{2-\lambda}-1]/(2-\lambda), & \text{if }\ \lambda \ne 2, y_i < 0 \\
+      -[(-y_{i}+1)^{2-\lambda}-1]/(2-\lambda), & \text{if}\ \lambda \ne 2, y_i < 0 \\
       -\log{(-y_{i}+1)}, & \text{if } \lambda = 2, y_i < 0 \\
     \end{cases}
     \end{equation}$$
