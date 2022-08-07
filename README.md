@@ -7,6 +7,18 @@ This package serves as a lightweight implementation of the [Yeo-Johnson](https:/
 ## Algorithm
 The Yeo-Johnson power transformation is an extension of the Box-Cox transformation that allows inputs that are not strictly positive. The intention behind applying a power transformation is to improve normality.
 
+The formula for the transformation is as follows for each $\y_{i}$ $\in$ $\mathb{y}$:
+
+$$\begin{equation}
+\psi{(\lambda,y_{i})} =
+    \begin{cases}
+      ((y_{i}+1)^{\lambda}-1)/\lambda, & \text{if }\ \lambda \ne 0, y \ge 0 \\
+      \log{(y_{i}+1)}, & \text{if } \lambda = 0, y \ge 0 \\
+      -[(-y_{i}+1)^{2-\lambda}-1]/(2-\lambda), & \text{if }\ \lambda \ne 2, y < 0 \\
+      -\log{(-y_{i}+1)}, & \text{if } \lambda = 2, y < 0 \\
+    \end{cases}
+    \end{equation}$$
+
 The value $\lambda$ is estimated by minimising the negative likelihood function. The search interval is -2, 2 (by default).
 
 ## Installation
